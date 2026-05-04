@@ -42,8 +42,7 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
-    router.push('/login');
-    router.refresh();
+    window.location.href = '/login';
   };
 
   return (
@@ -58,7 +57,7 @@ export default function Navbar() {
       <div className="hidden md:flex space-x-8 font-medium">
         <Link href="/labs" className="text-slate-300 hover:text-blue-400 transition-colors">Labs</Link>
         <Link href="/booking" className="text-slate-300 hover:text-blue-400 transition-colors">My Bookings</Link>
-        <Link href="/dashboard" className="text-slate-300 hover:text-indigo-400 transition-colors">Admin Panel</Link>
+        <Link href="/admin/dashboard" className="text-slate-300 hover:text-indigo-400 transition-colors">Admin Panel</Link>
       </div>
       <div className="flex space-x-4 items-center">
         {session ? (

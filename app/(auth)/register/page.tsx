@@ -58,8 +58,7 @@ export default function RegisterPage() {
       if (dbError) throw new Error(dbError.message);
 
       // Success
-      router.refresh();
-      router.push('/labs');
+      window.location.href = '/labs';
     } catch (err: any) {
       setError(err.message || 'An error occurred during registration');
     } finally {

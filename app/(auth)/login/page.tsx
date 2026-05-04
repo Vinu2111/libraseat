@@ -17,22 +17,13 @@ export default function LoginPage() {
     setError(null);
     setLoading(true);
 
-    try {
-      const { error: authError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (authError) throw new Error(authError.message);
-
-      // Success
-      router.refresh(); // Refresh to update navbar state and middleware context
-      router.push('/labs');
-    } catch (err: any) {
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) {
       setError('Invalid email or password. Please try again.');
-    } finally {
       setLoading(false);
+      return;
     }
+    window.location.href = '/labs';
   };
 
   return (
