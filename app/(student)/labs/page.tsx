@@ -55,19 +55,19 @@ export default function LabsPage() {
   )
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen p-4 md:p-8">
       <h1 className="text-3xl font-bold text-white mb-2">Available Labs</h1>
       <p className="text-gray-400 mb-8">Select a lab to view and book a seat.</p>
 
       {labs.length === 0 ? (
         <p className="text-gray-400">No labs found.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {labs.map((lab) => (
             <div
               key={lab.id}
               onClick={() => router.push(`/seats/${lab.id}`)}
-              className="cursor-pointer bg-white/10 border border-white/20 rounded-xl p-6 hover:bg-white/20 transition"
+              className="cursor-pointer bg-white/10 border border-white/20 rounded-xl p-6 hover:bg-white/20 transition min-h-[120px] w-full"
             >
               <h2 className="text-xl font-bold text-white mb-1">{lab.name}</h2>
               <p className="text-gray-400 text-sm mb-4">{lab.location}</p>

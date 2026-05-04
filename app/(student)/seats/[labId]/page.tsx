@@ -228,8 +228,8 @@ export default function SeatsPage({ params }: { params: { labId: string } }) {
       )}
 
       {selectedSeat && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl p-8 max-w-md w-full relative animate-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200 p-0 md:p-4">
+          <div className="bg-slate-900 border border-slate-700 md:rounded-3xl shadow-2xl p-6 md:p-8 max-w-md w-full h-full md:h-auto overflow-y-auto relative animate-in zoom-in-95 duration-200">
             <button 
               onClick={() => setSelectedSeat(null)}
               className="absolute top-6 right-6 text-slate-500 hover:text-white transition-colors"

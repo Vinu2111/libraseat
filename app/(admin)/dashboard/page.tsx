@@ -94,24 +94,24 @@ export default function AdminDashboard() {
       <h1 className="text-3xl font-extrabold text-white mb-8 tracking-tight">Overview</h1>
       
       {/* Top 4 Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg">
-          <p className="text-slate-400 text-sm font-medium mb-1">Total Students</p>
-          <p className="text-3xl font-bold text-white">{stats.students}</p>
+      <div className="grid grid-cols-2 gap-3 md:gap-6 md:grid-cols-4 mb-12">
+        <div className="bg-slate-800 p-4 md:p-6 rounded-2xl border border-slate-700 shadow-lg">
+          <p className="text-slate-400 text-xs md:text-sm font-medium mb-1">Total Students</p>
+          <p className="text-xl md:text-3xl font-bold text-white">{stats.students}</p>
         </div>
-        <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg">
-          <p className="text-slate-400 text-sm font-medium mb-1">Total Bookings</p>
-          <p className="text-3xl font-bold text-white">{stats.bookings}</p>
+        <div className="bg-slate-800 p-4 md:p-6 rounded-2xl border border-slate-700 shadow-lg">
+          <p className="text-slate-400 text-xs md:text-sm font-medium mb-1">Total Bookings</p>
+          <p className="text-xl md:text-3xl font-bold text-white">{stats.bookings}</p>
         </div>
-        <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg relative overflow-hidden">
+        <div className="bg-slate-800 p-4 md:p-6 rounded-2xl border border-slate-700 shadow-lg relative overflow-hidden">
           <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl"></div>
-          <p className="text-slate-400 text-sm font-medium mb-1">Total Revenue</p>
-          <p className="text-3xl font-bold text-emerald-400">₹{stats.revenue.toLocaleString()}</p>
+          <p className="text-slate-400 text-xs md:text-sm font-medium mb-1">Total Revenue</p>
+          <p className="text-xl md:text-3xl font-bold text-emerald-400">₹{stats.revenue.toLocaleString()}</p>
         </div>
-        <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg relative overflow-hidden">
+        <div className="bg-slate-800 p-4 md:p-6 rounded-2xl border border-slate-700 shadow-lg relative overflow-hidden">
           <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl"></div>
-          <p className="text-slate-400 text-sm font-medium mb-1">Available Seats</p>
-          <p className="text-3xl font-bold text-blue-400">{stats.availableSeats}</p>
+          <p className="text-slate-400 text-xs md:text-sm font-medium mb-1">Available Seats</p>
+          <p className="text-xl md:text-3xl font-bold text-blue-400">{stats.availableSeats}</p>
         </div>
       </div>
 
@@ -149,8 +149,8 @@ export default function AdminDashboard() {
       {/* Recent Bookings */}
       <h2 className="text-2xl font-bold text-white mb-6">Recent Bookings</h2>
       <div className="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-xl">
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-slate-300">
+        <div className="overflow-x-auto block w-full">
+          <table className="w-full text-left text-slate-300 min-w-max">
             <thead className="bg-slate-900/50 text-slate-400 border-b border-slate-700">
               <tr>
                 <th className="p-5 font-medium">Student</th>

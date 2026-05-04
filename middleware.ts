@@ -25,7 +25,7 @@ export async function middleware(req: NextRequest) {
     }
   )
 
-  const { data: { session } } = await supabase.auth.getSession()
+  const { data: { user } } = await supabase.auth.getUser()
 
   const isAuthPage = req.nextUrl.pathname === '/login' || 
                      req.nextUrl.pathname === '/register'
@@ -35,11 +35,11 @@ export async function middleware(req: NextRequest) {
                           req.nextUrl.pathname.startsWith('/booking') ||
                           req.nextUrl.pathname.startsWith('/admin')
 
-  if (isProtectedPage && !session) {
+  if (isProtectedPage && !user) {
     return NextResponse.redirect(new URL('/login', req.url))
   }
 
-  if (isAuthPage && session) {
+  if (isAuthPage && user) {
     return NextResponse.redirect(new URL('/labs', req.url))
   }
 

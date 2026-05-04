@@ -43,7 +43,7 @@ export default function SeatMap({ seats, onSeatClick }: SeatMapProps) {
           No seats found for this lab.
         </div>
       ) : (
-        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-4">
+        <div className="grid grid-cols-5 gap-2 md:grid-cols-8 md:gap-4 lg:grid-cols-10">
           {sortedSeats.map((seat) => {
             let seatStyle = '';
             if (seat.status === 'available') {
@@ -59,7 +59,7 @@ export default function SeatMap({ seats, onSeatClick }: SeatMapProps) {
                 key={seat.id}
                 disabled={seat.status !== 'available'}
                 onClick={() => seat.status === 'available' && onSeatClick?.(seat)}
-                className={`w-full aspect-square rounded-xl flex items-center justify-center text-sm font-bold transition-all duration-300 ${seatStyle}`}
+                className={`aspect-square flex items-center justify-center rounded-lg text-sm font-bold cursor-pointer transition-all duration-300 ${seatStyle}`}
               >
                 {seat.seat_number}
               </button>
