@@ -26,8 +26,8 @@ export default function LoginPage() {
       if (authError) throw new Error(authError.message);
 
       // Success
-      router.push('/labs');
       router.refresh(); // Refresh to update navbar state and middleware context
+      router.push('/labs');
     } catch (err: any) {
       setError('Invalid email or password. Please try again.');
     } finally {

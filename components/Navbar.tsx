@@ -22,7 +22,11 @@ export default function Navbar() {
           .select('name')
           .eq('id', data.session.user.id)
           .single();
-        if (student) setUserName(student.name);
+        if (student?.name) {
+          setUserName(student.name);
+        } else {
+          setUserName(data.session.user.email);
+        }
       }
     };
 
