@@ -3,11 +3,10 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { supabase } from '@/lib/supabaseClient';
 
 export default function Navbar() {
   const router = useRouter();
-  const supabase = createClientComponentClient();
   const [session, setSession] = useState<any>(null);
   const [userName, setUserName] = useState<string>('');
 
